@@ -60,7 +60,21 @@ dia_corregido, mes_corregido, año_corregido = validar_fecha(dia, mes, año)
     @property
     def weekday(self) -> int:
         '''Día de la semana de la fecha (0 para domingo, ..., 6 para sábado).'''
-        ...
+       # Asignar numeros a los dias
+        if day is domingo:
+            print("Dia numero 0")
+        if day is lunes:
+            print("Dia numero 1")
+        if day is martes:
+            print("Dia numero 2")
+        if day is miercoles:
+            print("Dia numero 3")
+        if day is jueves:
+            print("Dia numero 4")
+        if day is viernes:
+            print("Dia numero 5")
+        if day is sabado:
+            print("Dia numero 6")
 
     @property
     def is_weekend(self) -> bool:
@@ -68,7 +82,8 @@ dia_corregido, mes_corregido, año_corregido = validar_fecha(dia, mes, año)
 
     @property
     def short_date(self) -> str:
-        '''02/09/2003'''
+    # Mostrar una fecha en corto
+    # Primero mostramos fecha actual
         ...
 
     def __str__(self):
