@@ -27,7 +27,6 @@ dia_corregido, mes_corregido, año_corregido = validar_fecha(dia, mes, año)
 
 
     def is_leap_year(year: int) -> bool:
-        """ Un año es bisiesto en el calenadrio georgiano cada 4 años."""
         resultado = False
 
         if year % 4 == 0 and year % 100 != 0:
@@ -37,7 +36,6 @@ dia_corregido, mes_corregido, año_corregido = validar_fecha(dia, mes, año)
 
         return resultado
 
-    @staticmethod
     def days_in_month(month: int, year: int) -> int:
         days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
         if (self.is_leap_year)(year) and month == 2:
@@ -46,8 +44,18 @@ dia_corregido, mes_corregido, año_corregido = validar_fecha(dia, mes, año)
             return days[month-1]
 
     def get_delta_days(self) -> int:
-        '''Número de días transcurridos desde el 1-1-1900 hasta la fecha'''
-        ...
+        import datetime
+
+        dia = int(input("Introduce dia exacto: "))
+        mes = int(input("Introduce mes exacto: "))
+        año = int(input("Introduce año exacto: "))
+
+        fecha_inicial= datetime.date(1900, 1, 1)
+        fecha_introducida= datetime.date(año, mes, dia)
+
+        result= fecha_introducida - fecha_inicial
+
+        print(f'Dias transcurridos {result.days} aproximadamente')
 
     @property
     def weekday(self) -> int:
