@@ -109,6 +109,10 @@ dia_corregido, mes_corregido, año_corregido = validar_fecha(dia, mes, año)
         print("El minuto actual es {}". format(now.minute))
         print("El segundo actual es {}". format(now.second))
 
+        now = datetime.now()
+        format = now.strftime('Dia: %d, Mes: %m, Año: %Y, Hora: %H, Minutos: %M, Segundos: %S')
+        print(format)
+
     def __str__(self):
         '''MARTES 2 DE SEPTIEMBRE DE 2003'''
         ...
