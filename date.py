@@ -84,7 +84,30 @@ dia_corregido, mes_corregido, año_corregido = validar_fecha(dia, mes, año)
     def short_date(self) -> str:
     # Mostrar una fecha en corto
     # Primero mostramos fecha actual
-        ...
+        from datetime import date
+        from datetime import datetime
+
+        today = date.today()
+
+        now = datetime.now()
+
+        print(today)
+        print(now)
+
+        # Obtener dia, mes, año, hora, mins y segs
+
+        print("El dia actual es {}". format(today.day))
+        print("El mes actual es {}". format(today.month))
+        print("El año actual es {}". format(today.year))
+
+        # Datetime
+        print("El dia actual es {}". format(today.day))
+        print("El mes actual es {}". format(today.month))
+        print("El año actual es {}". format(today.year))
+
+        print("El hora actual es {}". format(now.hour))
+        print("El minuto actual es {}". format(now.minute))
+        print("El segundo actual es {}". format(now.second))
 
     def __str__(self):
         '''MARTES 2 DE SEPTIEMBRE DE 2003'''
