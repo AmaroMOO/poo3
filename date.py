@@ -140,12 +140,36 @@ dia_corregido, mes_corregido, año_corregido = validar_fecha(dia, mes, año)
     print("La nueva fecha es:", nueva_fecha)
 
 
-
     def __sub__(self, other: Date | int) -> int | Date:
         '''Dos opciones:
         1) Restar una fecha a otra fecha -> Número de días
         2) Restar un número de días la fecha -> Nueva fecha'''
-        ...
+       
+    from datetime import datetime
+
+    fecha1 = datetime(2024, 3, 20)
+    fecha2 = datetime(2023, 3, 20)
+
+    diferencia = fecha1 - fecha2
+
+    print("La diferencia entre las fechas es de:", diferencia, "días")
+
+
+
+    from datetime import datetime, timedelta
+
+    fecha_str = input("Ingresa la fecha inicial en formato YYYY-MM-DD: ")
+
+    fecha_inicial = datetime.strptime(fecha_str, '%Y-%m-%d')
+
+    dias_a_restar = int(input("Ingresa el número de días a restar: "))
+
+    nueva_fecha = fecha_inicial - timedelta(days=dias_a_restar)
+
+    print("Nueva fecha después de restar", dias_a_restar, "días:", nueva_fecha.strftime('%Y-%m-%d'))
+
+
+
 
     def __lt__(self, other) -> bool:
         ...
