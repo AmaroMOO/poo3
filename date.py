@@ -124,7 +124,22 @@ dia_corregido, mes_corregido, año_corregido = validar_fecha(dia, mes, año)
 
     def __add__(self, days: int) -> Date:
         '''Sumar un número de días a la fecha'''
-        
+    
+    from datetime import datetime, timedelta
+
+    anio = int(input("Ingresa el año de la fecha inicial: "))
+    mes = int(input("Ingresa el mes de la fecha inicial: "))
+    dia = int(input("Ingresa el día de la fecha inicial: "))
+
+    fecha_inicial = datetime(anio, mes, dia)
+
+    dias_a_sumar = int(input("Ingresa el número de días a sumar: "))
+
+    nueva_fecha = fecha_inicial + timedelta(days=dias_a_sumar)
+
+    print("La nueva fecha es:", nueva_fecha)
+
+
 
     def __sub__(self, other: Date | int) -> int | Date:
         '''Dos opciones:
