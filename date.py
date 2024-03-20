@@ -115,11 +115,16 @@ dia_corregido, mes_corregido, año_corregido = validar_fecha(dia, mes, año)
 
     def __str__(self):
         '''MARTES 2 DE SEPTIEMBRE DE 2003'''
-        ...
+    from datetime import datetime
+
+    fecha_antigua = datetime(2003, 9, 2) 
+
+    print("Fecha exacta de ese dia:", fecha_antigua)
+
 
     def __add__(self, days: int) -> Date:
         '''Sumar un número de días a la fecha'''
-        ...
+        
 
     def __sub__(self, other: Date | int) -> int | Date:
         '''Dos opciones:
